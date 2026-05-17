@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioSys - Meus Exames</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header style="background: white; padding: 1rem; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+        <div>Bem-vindo, <strong id="nome-usuario">Rafael Moreira Carvalho</strong></div>
+        <button id="btn-sair" class="btn-sair" onclick="deslogar()">Sair</button>
+    </header>
+
+    <div class="container">
+        <div class="card-tabela">
+            <h2>Exames Solicitados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Exame</th>
+                        <th>Data Solicitação</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-atuais">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-tabela">
+            <h2>Meu Histórico de Exames</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Exame</th>
+                        <th>Resultado</th>
+                        <th>Data Finalização</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-historico">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

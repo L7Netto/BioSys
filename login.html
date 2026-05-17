@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login BioSys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1>BioSys</h1>
+            <p>Acesse sua conta para ver seus exames</p>
+        </div>
+
+        <form id="form-login">
+            <div class="field">
+                <label>E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div class="field">
+                <label>Senha</label>
+                <input type="password" id="senha" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-auth">Entrar no Sistema</button>
+        </form>
+
+        <div class="auth-footer">
+            Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script> 
+    <script src="js/login.js"></script>   
+
+</body>
+</html>

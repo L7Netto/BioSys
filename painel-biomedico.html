@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioSys - Painel de Controle</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pequenos ajustes para os selects e o cabeçalho casarem com o seu CSS */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        header h1 { color: #1e3a8a; font-size: 1.5rem; }
+        header h1 span { color: #2563eb; }
+        .form-grupo {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .form-grupo select {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: white;
+            font-size: 0.9rem;
+        }
+        .btn-criar {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-criar:hover { background-color: #059669; }
+        .input-resultado {
+            width: 90px;
+            padding: 6px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bio<span>Sys</span> | Área Técnica</h1>
+        <button type="button" class="btn-sair" onclick="sairDoSistema()">Sair</button>
+    </header>
+
+    <main class="container">
+        <div class="card-tabela">
+            <h2>Nova Solicitação de Exame</h2>
+            <div class="form-grupo">
+                <select id="select-paciente">
+                    <option value="">Selecione o Paciente</option>
+                </select>
+                <select id="select-exame">
+                    <option value="">Selecione o Exame</option>
+                </select>
+                <button class="btn-criar" onclick="criarSolicitacao()">Criar Ordem</button>
+            </div>
+        </div>
+
+        <h2>Exames Pendentes de Resultado</h2>
+        <div class="card-tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Exame</th>
+                        <th>Data Solicitação</th>
+                        <th>Resultado (Valor)</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-pendentes">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script> 
+    <script src="js/biomedico.js"></script>
+    
+</body>
+</html>
